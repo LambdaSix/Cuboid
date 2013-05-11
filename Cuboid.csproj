@@ -1,0 +1,104 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{25C11C01-8126-47DE-8165-7302407F4AFC}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Cuboid</RootNamespace>
+    <AssemblyName>Cuboid</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <PlatformTarget>x86</PlatformTarget>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <PlatformTarget>x86</PlatformTarget>
+    <OutputPath>bin\x86\Release\</OutputPath>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="MonoGame.Framework, Version=3.0.1.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Blocks\IBlockType.cs" />
+    <Compile Include="Cameras\ICamera.cs" />
+    <Compile Include="Common\IState.cs" />
+    <Compile Include="Controllers\IController.cs" />
+    <Compile Include="ICuboidGame.cs" />
+    <Compile Include="Blocks\BlockFaceDirection.cs" />
+    <Compile Include="Blocks\IBlock.cs" />
+    <Compile Include="Common\NoiseGenerators\IPerlinSimplexNoise.cs" />
+    <Compile Include="Common\NoiseGenerators\IPerlinNoise2D.cs" />
+    <Compile Include="Common\VertexBufferType.cs" />
+    <Compile Include="Common\IInputState.cs" />
+    <Compile Include="Common\IRectangleF.cs" />
+    <Compile Include="Common\Vector3i.cs" />
+    <Compile Include="Common\Water\Water.cs" />
+    <Compile Include="Components\IBlockPicker.cs" />
+    <Compile Include="Components\IComponent.cs" />
+    <Compile Include="LuaVM\ILuaFunctionAttribute.cs" />
+    <Compile Include="LuaVM\ILuaFunctionDescriptor.cs" />
+    <Compile Include="LuaVM\ILuaVM.cs" />
+    <Compile Include="Managers\IBillboardManager.cs" />
+    <Compile Include="Managers\IParticleManager.cs" />
+    <Compile Include="Managers\IStateManager.cs" />
+    <Compile Include="Managers\IManager.cs" />
+    <Compile Include="Particles\IParticle.cs" />
+    <Compile Include="Particles\IParticleSettings.cs" />
+    <Compile Include="Particles\IParticleSystem.cs" />
+    <Compile Include="VertexFormats\ParticleVertex.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Rendering\ICubeRenderer.cs" />
+    <Compile Include="Rendering\ILighting.cs" />
+    <Compile Include="Rendering\Light.cs" />
+    <Compile Include="VertexFormats\VertexPositionTextureShade.cs" />
+    <Compile Include="WorldEngine\Generators\IMapGenerator.cs" />
+    <Compile Include="WorldEngine\IWorld.cs" />
+    <Compile Include="WorldEngine\Regions\IRegion.cs" />
+    <Compile Include="WorldEngine\Regions\IRegionBuilder.cs" />
+    <Compile Include="WorldEngine\Regions\IRegionCache.cs" />
+    <Compile Include="WorldEngine\IWorldSettings.cs" />
+    <Compile Include="WorldEngine\Regions\IRegionManager.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Content\" />
+    <Folder Include="Network\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
