@@ -30,7 +30,8 @@ namespace Cuboid.WorldEngine
         void AddModelFace(int x, int y, int z, BlockFaceDirection face);
         void RemoveModelFace(int x, int y, int z, BlockFaceDirection face);
         bool SolidAtPoint(Vector3 position);
-        bool SolidAt(int x, int y, int z);
+        bool SolidAtPoint(Vector3i position);
+        bool SolidAtPoint(int x, int y, int z);
         void MakeDirty(int x, int y, int z);
         bool InWorldBounds(int x, int y, int z);
     }
