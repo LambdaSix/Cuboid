@@ -40,7 +40,7 @@ namespace Cuboid.WorldEngine.Regions
         void RemoveWaterFace(Vector3i position, BlockFaceDirection face);
 
         void AddModelFace(Vector3i position, BlockFaceDirection face);
-        void RemoveModelFace(int x, int y, int z, BlockFaceDirection face);
+        void RemoveModelFace(Vector3i position, BlockFaceDirection face);
 
         void AddSolidFace(Vector3i position, BlockFaceDirection face);
         void RemoveSolidFace(Vector3i position, BlockFaceDirection face);
